@@ -1,0 +1,157 @@
+/* Custom Styles for Portal Pautan Perpustakaan Politeknik Tawau Sabah */
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: radial-gradient(rgba(59, 130, 246, 0.25) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+/* Glassmorphism & Card Styles */
+.link-card {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+.link-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+}
+
+.dark .link-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.35), 0 8px 10px -6px rgba(0, 0, 0, 0.25);
+}
+
+/* List view mode support */
+.links-list-mode {
+  grid-template-columns: 1fr !important;
+}
+
+.links-list-mode .link-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .links-list-mode .link-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Active Category Pill Animation */
+.category-btn.active {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.dark .category-btn.active {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+}
+
+/* Favorite Star Animation */
+.fav-btn.is-favorite {
+  color: #f59e0b !important;
+}
+
+.fav-btn.is-favorite i {
+  font-weight: 900 !important;
+}
+
+.fav-btn:hover {
+  transform: scale(1.15);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Safe Badge Styling */
+.badge-pts-core {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+.dark .badge-pts-core {
+  background-color: rgba(30, 58, 138, 0.4);
+  color: #93c5fd;
+  border-color: #1e40af;
+}
+
+.badge-pts-apps {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+.dark .badge-pts-apps {
+  background-color: rgba(153, 27, 27, 0.35);
+  color: #fca5a5;
+  border-color: #991b1b;
+}
+
+.badge-national {
+  background-color: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+.dark .badge-national {
+  background-color: rgba(146, 64, 14, 0.35);
+  color: #fcd34d;
+  border-color: #92400e;
+}
+
+.badge-polycc {
+  background-color: #eef2ff;
+  color: #4338ca;
+  border: 1px solid #c7d2fe;
+}
+.dark .badge-polycc {
+  background-color: rgba(55, 48, 163, 0.35);
+  color: #a5b4fc;
+  border-color: #3730a3;
+}
